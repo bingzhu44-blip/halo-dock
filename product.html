@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halo Dock Pro - 磁吸折叠手机支架 - 官方网站</title>
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f5f5f7; --text:#1d1d1f; --text2:#6e6e73; --text3:#86868b;
+  --blue:#0071e3; --border:rgba(0,0,0,.08);
+  --ease-apple:cubic-bezier(.16,1,.3,1); --ease-std:cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Inter",sans-serif;
+  background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;font-size:17px}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media(min-width:1200px){.wrap{padding:0 40px}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:48px;background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(0,0,0,.08)}
+.nav-wrap{max-width:1120px;margin:0 auto;height:100%;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.nav-logo{font-weight:600;font-size:15px;letter-spacing:-.02em}
+.nav-links{display:flex;gap:36px}
+.nav-links a{text-decoration:none;color:var(--text2);opacity:.6;transition:opacity .2s var(--ease-std)}
+.nav-links a:hover{opacity:1;color:var(--text)}
+.nav-buy{background:#000;color:#fff;text-decoration:none;font-size:13px;padding:6px 16px;border-radius:980px}
+
+.hero{text-align:center;padding:120px 0 20px}
+.hero .eyebrow{font-size:17px;color:var(--text2);margin-bottom:8px}
+.hero h1{font-size:clamp(48px,7vw,80px);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:10px}
+.hero .tagline{font-size:clamp(20px,2.4vw,26px);font-weight:500;letter-spacing:-.01em;color:var(--text2);margin-bottom:12px}
+.hero .price{font-size:17px;color:var(--text2);margin-bottom:26px}
+.hero-cta{display:flex;align-items:center;justify-content:center;gap:28px}
+.btn-pill{background:#000;color:#fff;text-decoration:none;font-size:17px;font-weight:500;padding:13px 30px;
+  border-radius:980px;transition:transform .2s var(--ease-std)}
+.btn-pill:hover{transform:scale(1.04)}
+.btn-pill:active{transform:scale(.96)}
+.link-more{color:var(--blue);text-decoration:none;font-size:19px}
+.link-more:hover{text-decoration:underline}
+.hero-product{margin-top:40px;max-width:640px;margin-left:auto;margin-right:auto}
+.hero-product img{width:100%;filter:drop-shadow(0 30px 54px rgba(0,0,0,.13));
+  animation:heroIn .9s var(--ease-apple) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+
+/* 配色 */
+#colorSection{background:var(--bg2);padding:110px 0;text-align:center;transition:background-color .6s var(--ease-std)}
+#colorSection h2{font-size:clamp(32px,4vw,48px);font-weight:600;letter-spacing:-.02em;margin-bottom:34px}
+.color-product{max-width:480px;margin:0 auto;perspective:1000px}
+.color-product img{width:100%;transition:opacity .2s var(--ease-std),transform .4s var(--ease-apple)}
+.color-product img.switching{opacity:0;transform:rotateY(18deg) scale(.97)}
+.color-name{margin-top:18px;font-size:20px;font-weight:600;opacity:0;transform:translateY(8px);
+  transition:opacity .4s var(--ease-std),transform .4s var(--ease-std)}
+.color-name.show{opacity:1;transform:none}
+.swatches{display:flex;justify-content:center;gap:22px;margin-top:30px}
+.swatch{width:30px;height:30px;border-radius:50%;cursor:pointer;border:2px solid transparent;
+  transition:transform .2s var(--ease-std),box-shadow .3s var(--ease-std)}
+.swatch:hover{transform:scale(1.1)}
+.swatch.active{box-shadow:0 0 0 2px #fff, 0 0 14px rgba(0,0,0,.25)}
+
+/* 结构 */
+.band{padding:120px 0}
+.band.grey{background:var(--bg2)}
+.band h2{font-size:clamp(32px,4vw,48px);font-weight:600;letter-spacing:-.02em;text-align:center;margin-bottom:14px}
+.band .sub{font-size:19px;color:var(--text2);text-align:center;max-width:620px;margin:0 auto 50px}
+.parts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border)}
+.parts .p{padding:28px 22px;border-bottom:1px solid var(--border)}
+.parts .pk{font-size:12px;color:var(--text3);margin-bottom:10px}
+.parts .pv{font-size:clamp(20px,2.2vw,26px);font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.parts .pd{font-size:14px;color:var(--text2);line-height:1.6}
+.band .visual{max-width:640px;margin:50px auto 0}
+.band .visual img{width:100%;border-radius:14px}
+.band .visual video{width:100%;border-radius:14px;display:block;background:#000}
+
+/* 规格表 */
+table{width:100%;border-collapse:collapse;margin-top:10px}
+td{padding:15px 0;border-bottom:1px solid var(--border);font-size:15px}
+td:first-child{width:34%;color:var(--text2)}
+td:last-child{font-weight:600}
+
+/* 购买 */
+#buy{background:var(--bg2);padding:120px 0;text-align:center}
+#buy h2{font-size:clamp(32px,4vw,48px);font-weight:600;letter-spacing:-.02em;margin-bottom:14px}
+#buy .bp{font-size:56px;font-weight:700;letter-spacing:-.03em;margin-bottom:26px}
+#buy .bp small{font-size:20px;color:var(--text2);font-weight:400}
+.buy-cta{display:inline-block;background:#000;color:#fff;text-decoration:none;font-size:18px;font-weight:500;
+  padding:15px 44px;border-radius:980px;transition:transform .2s var(--ease-std)}
+.buy-cta:hover{transform:scale(1.02) translateY(-2px)}
+.buy-cta:active{transform:scale(.98)}
+
+footer{background:var(--bg2);padding:40px 0;font-size:12px;color:var(--text3);border-top:1px solid var(--border)}
+.foot-note{font-size:12px;color:var(--text3);line-height:1.6;max-width:720px}
+.foot-egg{font-size:11px;color:var(--text3);margin-top:12px}
+
+.toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,20px);background:rgba(29,29,31,.92);
+  color:#fff;padding:14px 22px;border-radius:14px;font-size:14px;opacity:0;pointer-events:none;transition:.3s;
+  max-width:88vw;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.25);z-index:200}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast b{color:#ff9f0a}
+
+@media(max-width:820px){.nav-links{display:none}.parts{grid-template-columns:1fr}.hero h1{font-size:40px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrap">
+    <div class="nav-logo">Halo Dock</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="#color">配色</a>
+      <a href="#specs">规格</a>
+      <a href="#buy">购买</a>
+    </div>
+    <a class="nav-buy" href="javascript:void(0)" onclick="fakeBuy()">购买</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Halo Dock Pro</div>
+  <h1>Halo Dock Pro</h1>
+  <div class="tagline">把手机放稳，把桌面收拾干净。</div>
+  <div class="price">¥39 起</div>
+  <div class="hero-cta">
+    <a class="btn-pill" href="javascript:void(0)" onclick="fakeBuy()">购买</a>
+    <a class="link-more" href="#specs">进一步了解<span style="font-size:14px;margin-left:2px">›</span></a>
+  </div>
+  <div class="hero-product"><img src="assets/color-starlight.png" alt="Halo Dock Pro"></div>
+</div>
+
+<!-- 配色 -->
+<section id="colorSection">
+  <div class="wrap">
+    <h2>五种配色。</h2>
+    <div class="color-product"><img id="colorImg" src="assets/color-starlight.png" alt="配色"></div>
+    <div class="color-name" id="colorName">星光白</div>
+    <div class="swatches" id="swatches"></div>
+  </div>
+</section>
+
+<!-- 结构 -->
+<section class="band" id="specs">
+  <div class="wrap">
+    <h2>拆开看，只有 20 个零件。</h2>
+    <p class="sub">底座、上下支耳、支撑臂、支撑板五大部分，靠阻尼垫片与铆钉形成可调铰链。</p>
+    <div class="parts">
+      <div class="p"><div class="pk">主承力</div><div class="pv">底座 · 支撑臂 · 支耳</div><div class="pd">承重与折叠轨迹，展开后重心压在底座中心线上。</div></div>
+      <div class="p"><div class="pk">铰链</div><div class="pv">阻尼垫片 ×4 · 铆钉 ×3</div><div class="pd">阻尼靠垫片数量控制，铆钉固定，长期不松。</div></div>
+      <div class="p"><div class="pk">收口</div><div class="pv">盖板 ×5 · 防滑垫 ×4</div><div class="pd">盖板遮住外露结构，防滑垫决定会不会滑。</div></div>
+    </div>
+    <div class="visual"><img src="assets/modeling.png" alt="SolidWorks 装配体"></div>
+    <div class="visual"><video src="assets/modeling.mp4" controls playsinline preload="metadata"></video></div>
+  </div>
+</section>
+
+<!-- 规格 -->
+<section class="band grey">
+  <div class="wrap">
+    <h2>技术规格</h2>
+    <table>
+      <tr><td>材质</td><td>6061 铝合金</td></tr>
+      <tr><td>表面</td><td>阳极氧化 · 磨砂</td></tr>
+      <tr><td>折叠厚度</td><td>12 mm</td></tr>
+      <tr><td>展开高度</td><td>145 mm</td></tr>
+      <tr><td>底座尺寸</td><td>96 × 74 mm</td></tr>
+      <tr><td>适配宽度</td><td>55 – 88 mm</td></tr>
+      <tr><td>可调角度</td><td>0° – 75°</td></tr>
+      <tr><td>净重</td><td>约 186 g</td></tr>
+      <tr><td>配色</td><td>深空黑 / 星光白 / 午夜蓝 / 沙漠金 / 薄荷绿</td></tr>
+      <tr><td>附件</td><td>收纳袋 ×1</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 购买 -->
+<section id="buy">
+  <div class="wrap">
+    <h2>Halo Dock Pro</h2>
+    <div class="bp">¥39<small> 起</small></div>
+    <a class="buy-cta" href="javascript:void(0)" onclick="fakeBuy()">购买</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-note"><b>作品声明：</b>本页面为劳动教育课程作业《大学生创新创业大赛》的演示成果，产品参数、价格、配色均为虚构。「购买」按钮仅作交互演示，不产生真实交易、不收集任何个人信息、不联网提交任何数据。</div>
+    <div class="foot-egg">内部代号：宇宙第一无敌超级牛逼手机支架</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const COLORS=[
+  {name:'深空黑', img:'assets/color-deepblack.png', bg:'#e9eaec', swatch:'#2b2b2e'},
+  {name:'星光白', img:'assets/color-starlight.png', bg:'#f5f5f7', swatch:'#e9e7e2'},
+  {name:'午夜蓝', img:'assets/color-midnight.png', bg:'#eef1f5', swatch:'#2b3d5c'},
+  {name:'沙漠金', img:'assets/color-gold.png', bg:'#faf6ee', swatch:'#c8a06a'},
+  {name:'薄荷绿', img:'assets/color-mint.png', bg:'#eff7f2', swatch:'#9ec7b4'},
+];
+const swWrap=document.getElementById('swatches');
+const colorImg=document.getElementById('colorImg');
+const colorName=document.getElementById('colorName');
+const colorSection=document.getElementById('colorSection');
+let curColor=1;
+COLORS.forEach((c,i)=>{
+  const s=document.createElement('div');
+  s.className='swatch'+(i===curColor?' active':'');
+  s.style.background=c.swatch;
+  s.onclick=()=>setColor(i);
+  swWrap.appendChild(s);
+});
+function setColor(i){
+  curColor=i;
+  colorSection.style.backgroundColor=COLORS[i].bg;
+  colorName.textContent=COLORS[i].name;
+  colorName.classList.add('show');
+  colorImg.classList.add('switching');
+  setTimeout(()=>{ colorImg.src=COLORS[i].img; colorImg.classList.remove('switching'); }, 220);
+  [...swWrap.children].forEach((s,k)=>s.classList.toggle('active', k===i));
+}
+let tt=null;
+function fakeBuy(){
+  const el=document.getElementById('toast');
+  el.innerHTML='<b>演示模式</b>　已模拟将「Halo Dock Pro」加入购物袋 —— 本页为课程作品演示，不产生真实交易。';
+  el.classList.add('on'); clearTimeout(tt);
+  tt=setTimeout(()=>el.classList.remove('on'),3600);
+}
+</script>
+</body>
+</html>
